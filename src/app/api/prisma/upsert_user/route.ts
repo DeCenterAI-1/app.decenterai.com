@@ -8,13 +8,13 @@ export type userType = {
 }
 
 export async function POST(req: Request) {
-  const user: userType = await req.json()
-  const created_user = await prisma.user.upsert({
+  const user_dto: userType = await req.json()
+  const user = await prisma.user.upsert({
     where: {
-      email:user.email,
+      email:user_dto.email,
     },
-    create: user,
-    update: user,
+    create: user_dto,
+    update: user_dto,
   })
-  return new Response(JSON.stringify({ status: 200 }))
+  return new Response(JSON.stringify({ status: 200 , user}))
 }
