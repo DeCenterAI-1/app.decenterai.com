@@ -76,7 +76,8 @@
     "prisma/generated/**/*.ts",
     "enums/**/*.ts",
     "config/**/*.ts",
-    "public/**/*.ts"
+    "public/**/*.ts",
+    "utils/**/*.ts",
   ],
   "exclude": ["node_modules", "./jest.config.ts", "./prisma/seed.ts", "hardhat/*.ts"]
 }
