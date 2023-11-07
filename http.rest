@@ -1,0 +1,11 @@
+### Upsert User
+
+POST {{u}}/api/prisma/upsert_user
+Content-Type: application/json
+
+{
+  "email": "hiro-rest@decenterai.com",
+  "name": "Hiro-rest"
+}
+
+###
