@@ -46,7 +46,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
     console.log('logout')
     localStorage.clear()
     userStore.clearUser()
-    replace('/explore')
+    // replace('/explore')
     // push('/explore')
   }
 
@@ -62,7 +62,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
           onClick={closeNotification}
         />
       )}
-      <aside className="w-[10%] border-r border-primary_8  h-screen">
+      <aside className="w-[10%] border-r border-primary_9  h-screen">
         <Link href="/">
           <div className="w-full h-[10%] flex flex-col gap-2 pt-2 items-center justify-center">
             <Image
@@ -138,7 +138,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
       </aside>
 
       <main className=" w-[90%] h-screen ">
-        <div className="w-full h-[8%] flex items-center   border-b border-primary_8 px-10">
+        <div className="w-full h-[8%] flex items-center   border-b border-primary_9 px-10">
           <div className="h-full w-full flex gap-6 items-center justify-end font-archivo ">
             <div className="text-primary_8  cursor-pointer">
               <GoBell size={25} onClick={openNotification} />
