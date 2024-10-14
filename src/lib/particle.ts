@@ -1,14 +1,14 @@
 import { ParticleNetwork, WalletEntryPosition } from '@particle-network/auth'
 import { ParticleProvider } from '@particle-network/provider'
 // import { SolanaWallet } from '@particle-network/solana-wallet'
-import { Polygon, PolygonMumbai, EthereumSepolia } from '@particle-network/chains'
+import { Polygon, EthereumSepolia } from '@particle-network/chains'
 
 const particle = new ParticleNetwork({
   projectId: `${process.env.NEXT_PUBLIC_PARTICLE_NETWORK_PROJECT_ID}`,
   clientKey: `${process.env.NEXT_PUBLIC_PARTICLE_NETWORK_CLIENT_KEY}`,
   appId: `${process.env.NEXT_PUBLIC_PARTICLE_NETWORK_APP_ID}`,
-  chainName: PolygonMumbai.name, //optional: current chain name, default Ethereum.
-  chainId: PolygonMumbai.id, //optional: current chain id, default 1.
+  chainName: Polygon.name, //optional: current chain name, default Ethereum.
+  chainId: Polygon.id, //optional: current chain id, default 1.
   wallet: {
     //optional: by default, the wallet entry is displayed in the bottom right corner of the webpage.
     displayWalletEntry: true, //show wallet entry when connect particle.

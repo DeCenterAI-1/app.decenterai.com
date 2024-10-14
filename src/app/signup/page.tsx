@@ -27,7 +27,7 @@ const Page = () => {
           <div className="h-[10%] ">
             <h1 className="font-logirentBold text-primary_1 text-center font-bold text-4xl">
               {' '}
-              Log In
+              Sign Up
             </h1>
           </div>
           <div className="h-[90%]">
@@ -84,19 +84,19 @@ const Page = () => {
             </div>
             <div className="h-[45%] flex flex-col gap-3">
               <button className="border flex  items-center justify-center gap-4 border-primary_11 hover:border-primary_7 text-primary_7 font-semibold font-primaryArchivo text-sm w-full h-12 cursor-pointer rounded-xl">
-                <SiWalletconnect size={20} className="text-primary_7" /> Sign in with
+                <SiWalletconnect size={20} className="text-primary_7" /> Sign up with
                 Wallet
               </button>
               <button className="border flex  items-center justify-center gap-4 border-primary_11 hover:border-primary_7 text-primary_7 font-semibold font-primaryArchivo text-sm w-full h-12 cursor-pointer rounded-xl">
-                <PiGoogleLogoBold size={20} className="text-primary_7" /> Sign in with
+                <PiGoogleLogoBold size={20} className="text-primary_7" /> Sign up with
                 Wallet
               </button>
               <div className="text-primary_8 text-xs font-archivo ">
                 {' '}
                 <p className="font-light text-center">
-                  Are you new here?{' '}
-                  <Link href="/signup" className="text-primary_1 pl-3 cursor-pointer">
-                    Create Account
+                  Already have an account?{' '}
+                  <Link href="/signin" className="text-primary_1 pl-3 cursor-pointer">
+                    Log in
                   </Link>{' '}
                 </p>
               </div>
