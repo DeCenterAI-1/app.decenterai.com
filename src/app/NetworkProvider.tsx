@@ -2,13 +2,7 @@
 
 import { ModalProvider } from '@particle-network/connect-react-ui'
 import { WalletEntryPosition } from '@particle-network/auth'
-import {
-  Ethereum,
-  EthereumGoerli,
-  EthereumSepolia,
-  Polygon,
-  PolygonMumbai,
-} from '@particle-network/chains'
+import { Ethereum, EthereumSepolia, Polygon } from '@particle-network/chains'
 import { evmWallets } from '@particle-network/connect'
 
 export default function NetworkProvider({ children }: { children: React.ReactNode }) {
@@ -18,12 +12,12 @@ export default function NetworkProvider({ children }: { children: React.ReactNod
         projectId: `${process.env.NEXT_PUBLIC_PARTICLE_NETWORK_PROJECT_ID}`,
         clientKey: `${process.env.NEXT_PUBLIC_PARTICLE_NETWORK_CLIENT_KEY}`,
         appId: `${process.env.NEXT_PUBLIC_PARTICLE_NETWORK_APP_ID}`,
-        chains: [EthereumSepolia, Polygon, PolygonMumbai],
+        chains: [EthereumSepolia, Polygon],
         particleWalletEntry: {
           //optional: particle wallet config
           displayWalletEntry: true, //display wallet button when connect particle success.
           defaultWalletEntryPosition: WalletEntryPosition.BR,
-          supportChains: [EthereumSepolia, Polygon, PolygonMumbai],
+          supportChains: [EthereumSepolia, Polygon],
           customStyle: {}, //optional: custom wallet style
         },
         securityAccount: {
@@ -45,8 +39,7 @@ export default function NetworkProvider({ children }: { children: React.ReactNod
         //optional：display particle auth items and order
         'email',
         'google',
-      ]}
-    >
+      ]}>
       {children}
     </ModalProvider>
   )
