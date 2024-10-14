@@ -4,23 +4,21 @@ const nextConfig = {
   images: {
     domains: ['avataaars.io'],
   },
-  experimental: {
-    appDir: true,
-  },
+  experimental: {},
   // distDir: 'build',
   //output: 'export',
   reactStrictMode: false,
   swcMinify: true,
   modularizeImports: {},
-  async redirects() {
-    return [
-      {
-        source: '/',
-        destination: '/explore', // Matched parameters can be used in the destination
-        permanent: false,
-      },
-    ]
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: '/',
+  //       destination: '/', // Matched parameters can be used in the destination
+  //       permanent: false,
+  //     },
+  //   ]
+  // },
 }
 
 module.exports = nextConfig
