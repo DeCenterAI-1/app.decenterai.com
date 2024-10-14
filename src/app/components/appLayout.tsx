@@ -55,7 +55,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   }
   const userStore = useUserStore()
   return (
-    <div className={`w-screen h-screen flex  bg-primary_12 relative `}>
+    <div className={`w-screen h-screen flex  bg-primary_12  `}>
       {showBackdrop && (
         <div
           className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
@@ -193,7 +193,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
             )}
           </div>
         </div>
-        <div className="w-full h-[92%] px-10 ">{children}</div>
+        <div className="w-full h-[92%] px-10 relative ">{children}</div>
       </main>
       {isProfileOpen && (
         <div className=" bg-primary_11 px-4 w-[200px] text-primary_6 py-2 rounded-xl top-20  absolute  z-50 right-10">

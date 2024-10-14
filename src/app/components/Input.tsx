@@ -29,7 +29,7 @@ const Input: React.FC<IProps> = ({
       onChange={onChange}
       id={id}
       name={name}
-      className={`h-full w-full border-none outline-none ring-0 hover:ring-0 bg-transparent text-white ${className} ${error ? 'border-red-500' : ''}`}
+      className={`h-full w-full border-none outline-none ring-0 hover:ring-0 text-white ${className} ${error ? 'border-red-500' : ''}`}
       aria-invalid={!!error}
       aria-describedby={error ? `${id}-error` : undefined}
     />
