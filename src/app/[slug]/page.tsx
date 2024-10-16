@@ -63,15 +63,15 @@ export default function Home() {
             you
           </div>
 
-          <div className="flex border border-primary_7 rounded-xl h-[10%] w-3/4 m-auto ">
-            <Button className="w-[5%]  text-primary_7 bg-transparent rounded-none flex justify-start">
+          <div className="flex border-2 border-primary_7 rounded-xl h-[10%] max-h-[100px] w-3/4 m-auto ">
+            <Button className="w-[5%]   text-primary_7 bg-transparent rounded-none flex justify-start">
               <PiPaperclip size={25} />
             </Button>
-            <div className="w-[90%] h-full ">
+            <div className="w-[90%] h-full relative ">
               <ChatInput
                 onSubmit={() => console.log('Submited')}
                 placeholder="Chat with GPT -40"
-                className="bg-transparent"
+                className="bg-primary_12"
               />
             </div>
             <Button className="w-[5%]  text-primary_7 bg-transparent flex justify-end rounded-none">
