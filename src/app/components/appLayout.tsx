@@ -55,7 +55,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   }
   const userStore = useUserStore()
   return (
-    <div className={`w-screen h-screen flex  bg-primary_12  `}>
+    <div className={`w-screen h-screen flex  bg-primary_12 font-archivo `}>
       {showBackdrop && (
         <div
           className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
@@ -82,10 +82,10 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </Link>
         <div className="w-full h-[90%] overflow-y-auto font-archivo  pt-20">
-          <Link href="/dashboard">
+          <Link href="/">
             <div
               className={`flex flex-col items-center cursor-pointer justify-center gap-3 w-full py-6 hover:bg-primary_11 text-primary_8 hover:text-primary_1 ${
-                pathname === '/dashboard' ? 'bg-primary_11 text-white' : ''
+                pathname === '/' ? 'bg-primary_11 text-white' : ''
               }`}>
               <div className="flex justify-center ">
                 <BsChatRightDots size={25} />
@@ -94,10 +94,10 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </Link>
 
-          <Link href="/dashboard/repository">
+          <Link href="/history">
             <div
               className={`flex flex-col items-center cursor-pointer justify-center gap-3 w-full py-6 hover:bg-primary_11 text-primary_8 hover:text-primary_1 ${
-                pathname === '/dashboard/repository' ? 'bg-primary_11 text-white' : ''
+                pathname === '/history' ? 'bg-primary_11 text-white' : ''
               }`}>
               <div className="flex justify-center ">
                 <MdHistory size={25} />
@@ -123,10 +123,10 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
             <p className="text-sm">Rewards</p>
           </div> */}
-          <Link href="/dashboard/settings">
+          <Link href="/settings">
             <div
               className={`flex flex-col items-center cursor-pointer justify-center gap-3 w-full py-6 hover:bg-primary_11 text-primary_8 hover:text-primary_1 ${
-                pathname === '/dashboard/settings' ? 'bg-primary_11 text-white' : ''
+                pathname === '/settings' ? 'bg-primary_11 text-white' : ''
               }`}>
               <div className="flex justify-center ">
                 <BsGear size={25} />

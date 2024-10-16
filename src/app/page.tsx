@@ -22,7 +22,7 @@ export default function Home() {
     <main className="bg-primary_13 relative">
       <AppLayout>
         {showModal && <Models setShowModal={setShowModal} />}
-        <section className="h-full w-full text-primary_1 pt-10 flex flex-col gap-8">
+        <section className="h-full w-full text-primary_1 pt-10 pb-6 flex flex-col gap-8">
           <div className="h-1/3 w-2/3 m-auto border border-primary_8 rounded-xl flex flex-col justify-center items-center gap-8 ">
             <h2 className="font-logirentRegular text-3xl ">Decenter AI</h2>
             <div className="flex items-center justify-center gap-3">
@@ -92,7 +92,7 @@ export default function Home() {
               </Button>
             </div>
           </div>
-          <div className="h-2/3 w-2/3 m-auto grid grid-cols-4  gap-4 overflow-y-auto pb-10 px-3  ">
+          <div className="h-2/3 w-4/5 m-auto grid grid-cols-4  gap-4 overflow-y-auto pb-10   px-3">
             <div className="col-span-1 border border-primary_8 h-fit rounded-xl p-3">
               <div className="flex justify-between h-6">
                 <div className="rounded-full h-full px-3 text-sm flex items-center text-primary_7 bg-primary_9">
