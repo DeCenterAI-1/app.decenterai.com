@@ -4,8 +4,6 @@ import { AppLayout } from '../components/appLayout'
 import HistoryList from './components/HistoryList'
 
 export default function Home() {
-  const [showModal, setShowModal] = useState<boolean>(false)
-
   return (
     <main className="bg-primary_13 relative">
       <AppLayout>
