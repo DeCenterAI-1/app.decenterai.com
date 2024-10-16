@@ -55,7 +55,7 @@ export default function Page() {
     console.log(res)
     userStore.init(res.data.created_user)
 
-    push('/explore/welcome')
+    // push('/explore/welcome')
   }
 
   useEffect(() => {
@@ -94,8 +94,7 @@ export default function Page() {
             <div className="h-[60%] flex flex-col gap-3 pt-10">
               <button
                 className="border flex items-center justify-center gap-4 border-primary_11 hover:border-primary_7 text-primary_7 font-semibold font-primaryArchivo text-sm w-full h-12 cursor-pointer rounded-xl"
-                onClick={login}
-              >
+                onClick={login}>
                 <GiDigitalTrace size={20} className="text-primary_7" />
                 Start here
               </button>

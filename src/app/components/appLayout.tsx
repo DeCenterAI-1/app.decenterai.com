@@ -46,7 +46,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
     console.log('logout')
     localStorage.clear()
     userStore.clearUser()
-    replace('/explore')
+    // replace('/explore')
     // push('/explore')
   }
 
@@ -55,14 +55,14 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   }
   const userStore = useUserStore()
   return (
-    <div className={`w-screen h-screen flex  bg-primary_12 relative `}>
+    <div className={`w-screen h-screen flex  bg-primary_12 font-archivo `}>
       {showBackdrop && (
         <div
           className="fixed inset-0 bg-black/50 z-40 backdrop-blur-sm"
           onClick={closeNotification}
         />
       )}
-      <aside className="w-[10%] border-r border-primary_8  h-screen">
+      <aside className="w-[10%] border-r border-primary_9  h-screen">
         <Link href="/">
           <div className="w-full h-[10%] flex flex-col gap-2 pt-2 items-center justify-center">
             <Image
@@ -82,10 +82,10 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
           </div>
         </Link>
         <div className="w-full h-[90%] overflow-y-auto font-archivo  pt-20">
-          <Link href="/dashboard">
+          <Link href="/">
             <div
               className={`flex flex-col items-center cursor-pointer justify-center gap-3 w-full py-6 hover:bg-primary_11 text-primary_8 hover:text-primary_1 ${
-                pathname === '/dashboard' ? 'bg-primary_11 text-white' : ''
+                pathname === '/' ? 'bg-primary_11 text-white' : ''
               }`}>
               <div className="flex justify-center ">
                 <BsChatRightDots size={25} />
@@ -94,10 +94,10 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </Link>
 
-          <Link href="/dashboard/repository">
+          <Link href="/history">
             <div
               className={`flex flex-col items-center cursor-pointer justify-center gap-3 w-full py-6 hover:bg-primary_11 text-primary_8 hover:text-primary_1 ${
-                pathname === '/dashboard/repository' ? 'bg-primary_11 text-white' : ''
+                pathname === '/history' ? 'bg-primary_11 text-white' : ''
               }`}>
               <div className="flex justify-center ">
                 <MdHistory size={25} />
@@ -123,10 +123,10 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
             <p className="text-sm">Rewards</p>
           </div> */}
-          <Link href="/dashboard/settings">
+          <Link href="/settings">
             <div
               className={`flex flex-col items-center cursor-pointer justify-center gap-3 w-full py-6 hover:bg-primary_11 text-primary_8 hover:text-primary_1 ${
-                pathname === '/dashboard/settings' ? 'bg-primary_11 text-white' : ''
+                pathname === '/settings' ? 'bg-primary_11 text-white' : ''
               }`}>
               <div className="flex justify-center ">
                 <BsGear size={25} />
@@ -138,7 +138,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
       </aside>
 
       <main className=" w-[90%] h-screen ">
-        <div className="w-full h-[8%] flex items-center   border-b border-primary_8 px-10">
+        <div className="w-full h-[8%] flex items-center   border-b border-primary_9 px-10">
           <div className="h-full w-full flex gap-6 items-center justify-end font-archivo ">
             <div className="text-primary_8  cursor-pointer">
               <GoBell size={25} onClick={openNotification} />
@@ -193,7 +193,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
             )}
           </div>
         </div>
-        <div className="w-full h-[92%] px-10 ">{children}</div>
+        <div className="w-full h-[92%] px-10 relative ">{children}</div>
       </main>
       {isProfileOpen && (
         <div className=" bg-primary_11 px-4 w-[200px] text-primary_6 py-2 rounded-xl top-20  absolute  z-50 right-10">
