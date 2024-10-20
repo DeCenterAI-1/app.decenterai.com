@@ -6,7 +6,6 @@ import { usePathname } from 'next/navigation'
 import imageDecenterLogoWhite from '@public/Logo White.png'
 import imageDecenterLogoSubtitle from '@public/Logo Texts.png'
 import { IoChevronDownSharp } from 'react-icons/io5'
-
 import { BsChatRightDots, BsDatabase, BsGear } from 'react-icons/bs'
 import { GoBell, GoSearch } from 'react-icons/go'
 import { AiFillSetting } from 'react-icons/ai'
@@ -28,6 +27,40 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
   const [isNotificationOpen, setNotificationOpen] = useState(false)
   const [showBackdrop, setShowBackdrop] = useState(false)
   const [isProfileOpen, setProfileOpen] = useState(false)
+
+  // Handle user login
+  const handleLogin = async () => {
+    try {
+      const userInfo = await particle.auth.login({
+        supportAuthTypes: 'email,google,metamask',
+      })
+    } catch (error) {
+      console.error('Error during connection:', error)
+    }
+  }
+
+  // Handle user logout
+  // const handleDisconnect = async () => {
+  //   try {
+  //     if (connected) {
+  //       await disconnect()
+  //       console.log('Successfully disconnected')
+  //     } else {
+  //       console.log('Already disconnected')
+  //     }
+  //   } catch (error) {
+  //     console.error('Error during disconnection:', error)
+  //   }
+  // }
+
+  function truncate(address) {
+    if (address.length <= 8) {
+      return address
+    }
+    const start = address.substring(0, 4)
+    const end = address.substring(address.length - 4)
+    return `${start}...${end}`
+  }
 
   const openNotification = () => {
     setNotificationOpen(true)
@@ -143,11 +176,8 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
             <div className="text-primary_8  cursor-pointer">
               <GoBell size={25} onClick={openNotification} />
             </div>
-            {/* <button className="bg-primary_11 text-primary_1 font-semibold font-primaryArchivo py-2 px-3 cursor-pointer rounded-xl">
-              Connect Wallet
-            </button> */}
 
-            {!user ? (
+            {user ? (
               <>
                 <div className="flex items-center bg-primary_11 text-primary_1 font-semibold font-primaryArchivo  px-5  h-14 space-x-3 cursor-pointer rounded-full relative">
                   <button
@@ -155,7 +185,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
                     className="flex flex-row items-center w-full gap-3 ">
                     <span className="bg-pink-400 h-8 w-8 rounded-lg "></span>
                     <span className="text-primary_1 text-sm text-center ">
-                      0x09f0d0...
+                      {/* {address ? truncate(address) : ''} */}
                     </span>
 
                     <IoChevronDownSharp size={20} className="text-primary_7" />
@@ -185,11 +215,19 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
                 </div>
               </>
             ) : (
-              <div className="bg-primary_11 text-primary_1 font-semibold font-primaryArchivo py-2 px-3 cursor-pointer rounded-xl relative">
-                <button className="flex flex-row" onClick={() => replace('/explore')}>
-                  Log In
+              <>
+                <button
+                  onClick={handleLogin}
+                  className="bg-primary_11 text-primary_1 font-semibold font-primaryArchivo py-2 px-3 cursor-pointer rounded-xl">
+                  Connect Wallet
                 </button>
-              </div>
+
+                <div className="bg-primary_11 text-primary_1 font-semibold font-primaryArchivo py-2 px-3 cursor-pointer rounded-xl relative">
+                  <button className="flex flex-row" onClick={() => replace('/explore')}>
+                    Log In
+                  </button>
+                </div>
+              </>
             )}
           </div>
         </div>

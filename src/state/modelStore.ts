@@ -1,7 +1,6 @@
 import { create } from 'zustand'
 import { devtools, persist } from 'zustand/middleware'
-import { upsert_user } from '@app/explore/upsert_user'
-import { Model, TrainingRequest } from '@prisma/client'
+import { Model } from '@prisma/client'
 
 export type IModel = Omit<Omit<Model, 'createdAt'>, 'updatedAt'>
 
