@@ -1,5 +1,5 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { AppLayout } from '../components/appLayout'
 import Button from '../components/Button'
 import { RxExit } from 'react-icons/rx'

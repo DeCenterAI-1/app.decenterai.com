@@ -1,7 +1,4 @@
-import React, { useState } from 'react'
-import { MdOutlineCancel } from 'react-icons/md'
-import { VscSearch } from 'react-icons/vsc'
-import Image from 'next/image'
+import { useState } from 'react'
 import Input from '@/app/components/Input'
 import { AiOutlineEye } from 'react-icons/ai'
 import { PiEyeClosedLight } from 'react-icons/pi'
