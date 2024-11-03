@@ -2,21 +2,17 @@
 import { useState } from 'react'
 import { AppLayout } from '../../components/appLayout'
 import Button from '../../components/Button'
-import { RxExit } from 'react-icons/rx'
-import { LuUser2 } from 'react-icons/lu'
-import { VscLock } from 'react-icons/vsc'
-import { GoBell } from 'react-icons/go'
 import ChangePassword from '../components/ChangePassword'
 import NotificationSettings from '../components/NotificationSettings'
-import Link from 'next/link'
 import { MdChevronLeft } from 'react-icons/md'
 import Image from 'next/image'
-import { PiHourglassLow, PiPencilSimpleBold, PiPencilSimpleLight } from 'react-icons/pi'
+import { PiHourglassLow, PiPencilSimpleBold } from 'react-icons/pi'
 import HistoryList from '@/app/history/components/HistoryList'
+import EditProfile from './components/EditProfile'
 
 export default function Profile() {
   const [showModal, setShowModal] = useState<boolean>(false)
-  const [showNotificationModal, setShowNotificationModal] = useState<boolean>(false)
+
   const myImageLoader = ({ src }) => {
     return src
   }
@@ -24,10 +20,8 @@ export default function Profile() {
   return (
     <main className="bg-primary_13 relative">
       <AppLayout>
-        {showModal && <ChangePassword setShowModal={setShowModal} />}
-        {showNotificationModal && (
-          <NotificationSettings setShowNotificationModal={setShowNotificationModal} />
-        )}
+        {showModal && <EditProfile setShowModal={setShowModal} />}
+
         <section className="h-full w-full  text-primary_1 pt-20 pb-6   flex flex-col gap-3">
           <div className="w-full h-[5%] flex">
             <div className="h-full    full px-10  flex  text-primary_7 gap-6 items-center ">
@@ -59,7 +53,9 @@ export default function Profile() {
               <h4 className="text-xl">David Ayegoro</h4>
               <p className="text-primary_7 text-sm">davidayegoro@gmail.com</p>
             </div>
-            <div className="flex   items-center rounded-full justify-center bg-primary_9 text-primary_6 p-2 ">
+            <div
+              onClick={() => setShowModal(true)}
+              className="flex cursor-pointer   items-center rounded-full justify-center bg-primary_9 text-primary_6 p-2 ">
               <PiPencilSimpleBold size={25} />
             </div>
           </div>
