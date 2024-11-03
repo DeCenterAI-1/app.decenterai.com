@@ -59,8 +59,8 @@ export default function Profile() {
               <PiPencilSimpleBold size={25} />
             </div>
           </div>
-          <div className=" h-[15%] w-[30%] flex flex-col justify-center border border-primary_8 rounded-2xl  gap-4 px-10 ">
-            <h4 className="text-md font-semibold">Total Chats</h4>
+          <div className=" h-[15%] w-[30%] flex flex-col justify-center border border-primary_8 rounded-2xl  gap-4 px-10  py-2">
+            <h4 className="text-md font-semibold ">Total Chats</h4>
             <div className="w-full flex items-end justify-between">
               <p className="text-xl">17</p>
               <PiHourglassLow size={50} className="text-primary_7" />
