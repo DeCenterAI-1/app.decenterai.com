@@ -8,10 +8,11 @@ import { VscLock } from 'react-icons/vsc'
 import { GoBell } from 'react-icons/go'
 import ChangePassword from './components/ChangePassword'
 import NotificationSettings from './components/NotificationSettings'
+import Link from 'next/link'
 
-export default function Home() {
+export default function Settings() {
   const [showModal, setShowModal] = useState<boolean>(false)
-  const [showNotificationModal, setShowNotificationModal] = useState<boolean>(true)
+  const [showNotificationModal, setShowNotificationModal] = useState<boolean>(false)
 
   return (
     <main className="bg-primary_13 relative">
@@ -22,10 +23,12 @@ export default function Home() {
         )}
         <section className="h-full w-full  text-primary_1 pt-20 pb-6 flex  gap-8">
           <div className="h-full   w-[80%] overflow-y-auto px-10  flex flex-col gap-8 ">
-            <div className="w-full border border-primary_7 h-16 rounded-xl flex space-x-4 items-center  text-primary_7 px-4 cursor-pointer">
+            <Link
+              href="/settings/user"
+              className="w-full border border-primary_7 h-16 rounded-xl flex space-x-4 items-center  text-primary_7 px-4 cursor-pointer">
               <LuUser2 size={20} />
               <p className="font-semibold text-primary_1">Profile</p>
-            </div>
+            </Link>
             <div
               onClick={() => setShowModal(true)}
               className="w-full border border-primary_7 h-16 rounded-xl flex space-x-4 items-center  text-primary_7 px-4 cursor-pointer">

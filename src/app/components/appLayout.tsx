@@ -132,7 +132,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
           <Link href="/history">
             <div
               className={`flex flex-col items-center cursor-pointer justify-center gap-3 w-full py-6 hover:bg-primary_11 text-primary_8 hover:text-primary_1 ${
-                pathname === '/history' ? 'bg-primary_11 text-white' : ''
+                pathname.startsWith('/history') ? 'bg-primary_11 text-white' : ''
               }`}>
               <div className="flex justify-center ">
                 <MdHistory size={25} />
@@ -161,7 +161,7 @@ export const AppLayout = ({ children }: { children: React.ReactNode }) => {
           <Link href="/settings">
             <div
               className={`flex flex-col items-center cursor-pointer justify-center gap-3 w-full py-6 hover:bg-primary_11 text-primary_8 hover:text-primary_1 ${
-                pathname === '/settings' ? 'bg-primary_11 text-white' : ''
+                pathname.startsWith('/settings') ? 'bg-primary_11 text-white' : ''
               }`}>
               <div className="flex justify-center ">
                 <BsGear size={25} />
