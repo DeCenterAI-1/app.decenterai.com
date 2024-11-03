@@ -28,7 +28,7 @@ export default function Home() {
             <div className="flex items-center justify-center gap-3">
               <Button className="">
                 <Image
-                  src="/avatars/avatar-8.png"
+                  src="/avatars/avatar-1.png"
                   alt="profile pic"
                   loader={myImageLoader}
                   unoptimized
